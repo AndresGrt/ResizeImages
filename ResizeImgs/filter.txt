@@ -1,0 +1,5 @@
+# use one of these filter options to resize the image
+#im2 = img.resize((nW, nH), Image.NEAREST)      # use nearest neighbour
+#im3 = img.resize((nW, nH), Image.BILINEAR)     # linear interpolation in a 2x2 environment
+#im4 = img.resize((nW, nH), Image.BICUBIC)      # cubic spline interpolation in a 4x4 environment
+#im5 = img.resize((nW, nH), Image.ANTIALIAS)    # best down-sizing filter
