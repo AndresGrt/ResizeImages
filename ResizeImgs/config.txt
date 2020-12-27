@@ -1,0 +1,77 @@
+//comentarios despues de dos barra
+//Colocar el Titulo del recorrido luego de la palabra clave Titulo y los dos puntos
+//El Titulo aparecera al principio del recorrido cuando esta cargando
+//Colocar en la palabra clave Inicio, el numero de la foto en la cual deseo comience el recorrido
+//Colocar los grados de rotacion en los cuales deseo inicie el recorrido en la foto inicial.
+
+Titulo:
+PrimerEscena:14
+CameraRotation:(-9.2,2.5)
+CameraTilt:5
+VisionAngle:55
+VisionAngleMovilVertical:80
+AlturaCamara:1.5
+DistanciaCambiaPunto:15
+
+Editor:si
+FrameVideo:30
+SpeedVideo:10
+SpeedDragVideo:100
+MostrarNombre:si
+ActivarVideo:no
+MatchCanvas:0.42
+
+ColorMarcoVideo:#E5B100
+
+MaximoNumero:18
+MaximoNumeroMovil:5
+SelectorSize:.2
+
+//configuración avanzada
+FieldOfView:120
+FieldOfViewWide:120
+
+LoadLow:si
+LoadMedium:no
+LoadHigh:si
+
+LowQuality:2m
+MediumQuality:3m
+HighQuality:4m
+
+Invertir:si
+
+//movil
+LoadLowMovil:si
+LoadMediumMovil:no
+LoadHighMovil:si
+
+LowQualityMovil:2m
+MediumQualityMovil:3m
+HighQualityMovil:4m
+
+InvertirTouch:no
+
+//mecanicas
+SpheresFade:{"isAutomatic":false,"current":5,"next":4}
+TransitionSpeed:4
+SpeedClickRotation:20
+SpeedTouchRotation:5
+Damp:0.1
+AutoRotate:no
+
+//interfaz de usuario
+Fullscreen:{"tooltip":"","isActive":true}
+Settings:{"tooltip":"Settings","isActive":false}
+Isometric:{"tooltip":"Isometric","isActive":false}
+ExteriorPlane:{"tooltip":"ExteriorPlane","isActive":true}
+InteriorPlane:{"tooltip":"InteriorPlane","isActive":false}
+Interior:{"tooltip":"Interior","isActive":false}
+Zones:{"tooltip":"Zones","isActive":true,"AutomaticStart":true}
+Gallery:{"tooltip":"Gallery","isActive":true,"size":1}
+Play:{"tooltip":"Play","isActive":true}
+Avion:{"tooltip":"Avion","isActive":false}
+Comment:{"tooltip":"Comment","isActive":false}
+
+//opcionales
+PuntosPlano:{"isActive":false,"escala":10,"posicionPuntos":{"x":0,"y":0,"z":0},"rotacionPuntos":0}

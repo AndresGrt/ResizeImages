@@ -15,26 +15,24 @@ except OSError as e:
     if e.errno != errno.EEXIST:
         raise
 
-try:
-    os.mkdir('Tools/gallery')
-except OSError as e:
-    if e.errno != errno.EEXIST:
-        raise
+#try:
+#    os.mkdir('Tools/gallery')
+#except OSError as e:
+#    if e.errno != errno.EEXIST:
+#        raise
 
 # Copia el archivo desde la ubicación actual a la
 # carpeta "Documentos".
-shutil.copy("config.txt", "Tools/config.txt")
-shutil.copy("ruta.txt", "Tools/ruta.txt")
-shutil.copy("scenes.txt", "Tools/scenes.txt")
-shutil.copy("rotacionCamara.txt", "Tools/rotacionCamara.txt")
-shutil.copy("rotaciones.txt", "Tools/rotaciones.txt")
+#shutil.copy("config.txt", "Tools/config.txt")
+#shutil.copy("ruta.txt", "Tools/ruta.txt")
+#shutil.copy("scenes.txt", "Tools/scenes.txt")
+#shutil.copy("Readme.txt", "Tools/Readme.txt")
 
+#f = open ('Tools/names.txt','wb')
+#f.close()
 
-f = open ('Tools/names.txt','wb')
-f.close()
-
-directorio = "Procesar/"
-files=ls1("Procesar/")
+directorio = "ProcesarB/"
+files=ls1("ProcesarB/")
 
 count = 0
 
@@ -52,15 +50,16 @@ for file in files:
 
     print(image_folder)
     image_file = file
-
-    if count >= len(files):
-        file = open("Tools/names.txt", "a")
-        file.write(image_file )
-        file.close()
-    else:
-        file = open("Tools/names.txt", "a")
-        file.write(image_file + '\n')
-        file.close()
+    
+    
+    #if count >= len(files):
+    #    file = open("Tools/names.txt", "a")
+    #    file.write(image_file )
+    #    file.close()
+    #else:
+    #    file = open("Tools/names.txt", "a")
+    #    file.write(image_file + '\n')
+    #    file.close()
     
     
     #abrimos la imagen
@@ -70,9 +69,9 @@ for file in files:
     width, height = img.size
     print(img.size)
 
-    folderImgOriginal = f"_{str(width)[0]}m"
+    folderImgOriginal = f"_{str(width)[0]}mb"
 
-    direct = [folderImgOriginal, "_4mA","_4mM","_4mL", "_3m", "_2m", "_1m", "_512"]
+    direct = [folderImgOriginal, "_4mb", "_3mb", "_2mb", "_1mb", "_512b"]
     
     for i in direct:
         try:
@@ -84,25 +83,19 @@ for file in files:
         if i == folderImgOriginal:
             nW = int(width)
             w = 16
-        elif i == "_4mA":
-            nW = 4096
-            w = 16
-        elif i == "_4mM":
+        elif i == "_4mb":
             nW = 4096
             w = 8
-        elif i == "_4mL":
-            nW = 4096
-            w = 4
-        elif i == "_3m":
+        elif i == "_3mb":
             nW = 3000
             w = 8
-        elif i == "_2m":
+        elif i == "_2mb":
             nW = 2048
             w = 4
-        elif i == "_1m":
+        elif i == "_1mb":
             nW = 1024
             w = 4
-        elif i == "_512":
+        elif i == "_512b":
             nW = 512
             w = 4
         
@@ -138,26 +131,22 @@ for file in files:
                 print ('tamaño: ' + str(new_img.size))
                 region = new_img.crop(caja)
                 if i == folderImgOriginal:
-                    path = f'Tools/{i}/{image_folder}/{x}_{y}({folderImgOriginal}).webp'
-                elif i == "_4mA":
-                    path = f'Tools/{i}/{image_folder}/{x}_{y}(_4mA).webp'
-                elif i == "_4mM":
-                    path = f'Tools/{i}/{image_folder}/{x}_{y}(_4mM).webp'
-                elif i == "_4mL":
-                    path = f'Tools/{i}/{image_folder}/{x}_{y}(_4mL).webp'
-                elif i == "_3m":
-                    path = f'Tools/{i}/{image_folder}/{x}_{y}(_3m).webp'
-                elif i == "_2m":
-                    path = f'Tools/{i}/{image_folder}/{x}_{y}(_2m).webp'
-                elif i == "_1m":
-                    path = f'Tools/{i}/{image_folder}/{x}_{y}(_1m).webp'
-                elif i == "_512":
-                    path = f'Tools/{i}/{image_folder}/{x}_{y}(_512).webp'
+                    path = f'Tools/{i}/{image_folder}/{x}_{y}({folderImgOriginal}).jpg'
+                elif i == "_4mb":
+                    path = f'Tools/{i}/{image_folder}/{x}_{y}(_4mb).jpg'
+                elif i == "_3mb":
+                    path = f'Tools/{i}/{image_folder}/{x}_{y}(_3mb).jpg'
+                elif i == "_2mb":
+                    path = f'Tools/{i}/{image_folder}/{x}_{y}(_2mb).jpg'
+                elif i == "_1mb":
+                    path = f'Tools/{i}/{image_folder}/{x}_{y}(_1mb).jpg'
+                elif i == "_512b":
+                    path = f'Tools/{i}/{image_folder}/{x}_{y}(_512b).jpg'
                     
                 
                 print (path)
-                region = region.convert('RGB')
-                region.save(path, 'webp')
+                #region.save(path, optimize = True, quality = 45)
+                region.save(path)
         
         print(nW, nH)
         

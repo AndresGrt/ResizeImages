@@ -1,0 +1,1 @@
+﻿ejemplo de uso {"escena":"0","rotacion":{"x":50,"y":140}}
