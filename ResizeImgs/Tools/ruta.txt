@@ -1,0 +1,1 @@
+ejemplo de uso {"scene":0,"direction":1,"rotaY":0,"rotaX":5,"speed":10,"maxTime":15}

@@ -1,0 +1,1 @@
+﻿ejemplo de uso {"id":0,"nombre":"Lote 1","info":"","escena":8,"rotacion":{"x":5.0,"y":0.0},"frame":17,"video":5,"esperar":3,"moverse":2.5,"mostrarenescena":true,"fontsizename":40,"fontsizeinfo":40,"mostrarenpunto":true}
